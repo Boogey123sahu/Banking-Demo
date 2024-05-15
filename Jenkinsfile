@@ -8,7 +8,7 @@ pipeline {
     stage('Git checkout') {
       steps {
          echo 'This is for cloning the gitrepo'
-         git branch: 'main', url: 'https://github.com/challadevops1/Banking-Demo.git'
+         git branch: 'main', url: 'https://github.com/Boogey123sahu/Banking-Demo.git'
                           }
             }
     stage('Create a Package ') {
@@ -25,7 +25,7 @@ pipeline {
             }
     stage('Create a Docker image from the Package Insure-Me.jar file') {
       steps {
-        sh 'docker build -t cbabu85/banking:1.0 .'
+        sh 'docker build -t kailashsahu/banking:1.0 .'
                     }
             }
     stage('Login to Dockerhub') {
@@ -37,7 +37,7 @@ pipeline {
             }
     stage('Push the Docker image') {
       steps {
-        sh 'docker push cbabu85/banking:1.0'
+        sh 'docker push kailashsahu/banking:1.0'
                                 }
             }
     stage('Create Infrastructure using terraform') {
