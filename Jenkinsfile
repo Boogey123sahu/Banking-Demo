@@ -43,7 +43,7 @@ pipeline {
     stage('Create Infrastructure using terraform') {
       steps {
             dir('scripts') {
-            sh 'sudo chmod 600 learnawskey.pem'
+            sh 'sudo chmod 600 19_Apr.pem'
             withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'jenkinsIAMuser', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
             sh 'terraform init'
             sh 'terraform validate'
