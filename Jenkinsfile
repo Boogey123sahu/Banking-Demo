@@ -11,7 +11,7 @@ pipeline {
          git branch: 'main', url: 'https://github.com/challadevops1/Banking-Demo.git'
                           }
             }
-    stage('Create a Package') {
+    stage('Create a Package ') {
       steps {
          echo 'This will create a package using maven'
          sh 'mvn package'
